@@ -44,8 +44,8 @@ class JsonFile extends SatooshiJsonFile
         $command = new GitCommand();
 
         return array(
-            "head"         => $command->getHead(),
-            "branch"       => $command->getBranch(),
+            "head"         => $_SERVER["BUILDBOX_COMMIT"], //$command->getHead(),
+            "branch"       => $_SERVER["BUILDBOX_BRANCH"], //$command->getBranch(),
             "committed_at" => $command->getCommittedAt()
         );
     }
